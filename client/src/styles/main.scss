@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+@charset 'utf-8';
+
+html,
+body {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: #282c34;
+  height: 100vh;
+  box-sizing: border-box;
+  background: fixed;
+
+  a {
+    text-decoration: none;
+    color: #323232;
+  }
+}
+#root {
+  background-color: #282c34;
+}
+
+/* Enforces border-box for whole site */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+@import "./partials/frontPage";
