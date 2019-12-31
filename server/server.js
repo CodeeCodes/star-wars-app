@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // DB config
 const db = require("./config/keys").mongoURI;
+
 // connect to mongo
 mongoose
   .connect(db, {
@@ -20,6 +21,7 @@ mongoose
   })
   .then(() => console.log("mongoDB is connected"))
   .catch(err => console.log(err));
+  
 //routes
 const authRouter = require("./routes/api/auth");
 const loginRouter = require("./routes/api/login");

@@ -12,17 +12,20 @@ let User = require(loginData);
 
 app.use(express.urlencoded({ extended: true }));
 
-router.post("/", async (req, res) => {
-  //checking if email exists
-  const userExists = await User.findOne({
-    email: req.body.email,
-    password: req.body.password
+function authenticate(email, fn) {
+  const user = User.findOne({ email: email }, function(err, user) {
+    if (!user) return fn(new Error("cannot find user"));
   });
-  if (!userExists) {
-    return res.status(400).send("Email or password doesn't exist");
-  } else {
-    return res.status(200).send("successful login");
-  }
+}
+router.post("/", (req, res) => {
+  //checking if email exists
+  authenticate(req.body.email, function(err, user) {
+    if (user) {
+      return res.status(400).send(err);
+    } else {
+      return res.status(200).send("successful login");
+    }
+  });
 });
 
 module.exports = router;

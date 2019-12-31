@@ -10,6 +10,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   background-color: #282c34;
   height: 100vh;
+  width: 100vw;
   box-sizing: border-box;
   background: fixed;
 
@@ -20,6 +21,8 @@ body {
 }
 #root {
   background-color: #282c34;
+  height: 100vh;
+  width: 100vw;
 }
 
 /* Enforces border-box for whole site */
@@ -29,3 +32,4 @@ body {
   box-sizing: inherit;
 }
 @import "./partials/frontPage";
+@import "./partials/home";

@@ -1,17 +1,14 @@
 import React from "react";
-import logoTwo from "../assets/svg/logoTwo.svg";
-import "../styles/main.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
-const registerUrl = "http://localhost:5000/auth";
+import logoTwo from "../assets/svg/logoTwo.svg";
+const loginUrl = "http://localhost:5000/login";
 
-export default function FrontPage() {
-  const registerUser = event => {
+export default function Login() {
+  const loginUser = event => {
     event.preventDefault();
     console.log(event.target.email.value, event.target.password.value);
     axios
-      .post(registerUrl, {
-        name: event.target.name.value,
+      .post(loginUrl, {
         email: event.target.email.value,
         password: event.target.password.value
       })
@@ -29,18 +26,9 @@ export default function FrontPage() {
           <form
             action="/"
             method="POST"
-            onSubmit={registerUser}
+            onSubmit={loginUser}
             className="front__page-login-form"
           >
-            <div>
-              <h4 className="front__page-heading-small">Name</h4>
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                className="front__page-input"
-              />
-            </div>
             <div>
               <h4 className="front__page-heading-small">Email</h4>
               <input
@@ -60,15 +48,9 @@ export default function FrontPage() {
               />
             </div>
             <div className="front__page-button-div">
-              <button className="front__page-button">REGISTER</button>
+              <button className="front__page-button">LOGIN</button>
             </div>
           </form>
-          <div className="front__page-button-div">
-            <Link to="/home">
-              {" "}
-              <button className="front__page-button">LOGIN</button>
-            </Link>
-          </div>
         </div>
       </header>
       <div className="front__page-image">

@@ -8,6 +8,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   background-color: #282c34;
   height: 100vh;
+  width: 100vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: fixed;
@@ -21,6 +22,8 @@ body a {
 
 #root {
   background-color: #282c34;
+  height: 100vh;
+  width: 100vw;
 }
 
 /* Enforces border-box for whole site */
@@ -98,5 +101,11 @@ body a {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.main {
+  background-color: #282c34;
+  height: 100vh;
+  width: 100vw;
 }
 /*# sourceMappingURL=main.css.map */
