@@ -13,13 +13,13 @@ let User = require(loginData);
 app.use(express.urlencoded({ extended: true }));
 
 function authenticate(email, fn) {
-  const user = User.findOne({ email: email }, function(err, user) {
+  const user = User.findOne({ email: email }, function (err, user) {
     if (!user) return fn(new Error("cannot find user"));
   });
 }
 router.post("/", (req, res) => {
   //checking if email exists
-  authenticate(req.body.email, function(err, user) {
+  authenticate(req.body.email, function (err, user) {
     if (user) {
       return res.status(400).send(err);
     } else {

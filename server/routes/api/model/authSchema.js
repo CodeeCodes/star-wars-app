@@ -7,24 +7,24 @@ const uuid = require("uuid/v4");
 const AuthSchema = Schema({
   name: {
     type: String,
-    required: false
+    required: true,
   },
   email: {
     type: String,
-    required: false
+    required: true,
   },
   password: {
     type: String,
-    required: false
+    required: true,
   },
   _id: {
     type: String,
-    default: uuid
+    default: uuid,
   },
   date: {
     type: String,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 module.exports = Auth = mongoose.model("auth", AuthSchema);

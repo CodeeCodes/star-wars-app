@@ -7,16 +7,16 @@ const uuid = require("uuid/v4");
 const LoginSchema = Schema({
   email: {
     type: String,
-    required: false
+    required: true,
   },
   password: {
     type: String,
-    required: false
+    required: true,
   },
   date: {
     type: String,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 module.exports = Login = mongoose.model("login", LoginSchema);

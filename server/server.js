@@ -18,10 +18,10 @@ mongoose
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify: false
+    useFindAndModify: false,
   })
   .then(() => console.log("mongoDB is connected"))
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 
 //routes
 const authRouter = require("./routes/api/auth");
@@ -30,7 +30,7 @@ const loginRouter = require("./routes/api/login");
 /// Simple API Documentation
 app.get("/", (req, res) => {
   res.json({
-    msg: "You can perform these requests from this API:"
+    msg: "You can perform these requests from this API:",
   });
 });
 

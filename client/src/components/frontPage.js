@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 const registerUrl = "http://localhost:5000/auth";
 
 export default function FrontPage() {
-  const registerUser = event => {
+  const registerUser = (event) => {
     event.preventDefault();
     console.log(event.target.email.value, event.target.password.value);
     axios
       .post(registerUrl, {
         name: event.target.name.value,
         email: event.target.email.value,
-        password: event.target.password.value
+        password: event.target.password.value,
       })
       .then(({ data }) => {
         console.log("Token: ", data);
@@ -64,7 +64,7 @@ export default function FrontPage() {
             </div>
           </form>
           <div className="front__page-button-div">
-            <Link to="/home">
+            <Link to="/login">
               {" "}
               <button className="front__page-button">LOGIN</button>
             </Link>

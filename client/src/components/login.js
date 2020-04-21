@@ -4,13 +4,13 @@ import logoTwo from "../assets/svg/logoTwo.svg";
 const loginUrl = "http://localhost:5000/login";
 
 export default function Login() {
-  const loginUser = event => {
+  const loginUser = (event) => {
     event.preventDefault();
-    console.log(event.target.email.value, event.target.password.value);
+    // console.log(event.target.email.value, event.target.password.value);
     axios
       .post(loginUrl, {
         email: event.target.email.value,
-        password: event.target.password.value
+        password: event.target.password.value,
       })
       .then(({ data }) => {
         console.log("Token: ", data);
