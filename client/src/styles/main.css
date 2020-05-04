@@ -26,6 +26,11 @@ body a {
   width: 100vw;
 }
 
+h4 {
+  margin: 0;
+  padding: 10px;
+}
+
 /* Enforces border-box for whole site */
 *,
 *:before,
